@@ -62,3 +62,17 @@ This following settings are available by default
 3) Admins
    - username: **admin**
    - password: **admin**
+
+## Testing
+
+1) In running application containers
+
+```bash
+docker compose exec backend sh
+```
+
+2) In container terminal
+
+```bash
+/bin/sh ./run-tests.sh
+```
