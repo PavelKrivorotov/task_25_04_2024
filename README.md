@@ -76,3 +76,91 @@ docker compose exec backend sh
 ```bash
 /bin/sh ./run-tests.sh
 ```
+
+## Hard mode (Linux)
+
+### If you want run application without Docker:
+
+1) Clone this repository
+
+```bash
+git clone https://github.com/PavelKrivorotov/task_25_04_2024.git
+```
+
+#### Run database (postgres > v13):
+
+1) Start database
+
+```bash
+sudo systemctl start postgresql
+```
+
+2) Connect to database
+
+```bash
+psql -U postgres -h 127.0.0.1 -p 5432
+```
+
+4) Create database
+
+```bash
+postgres# CREATE DATABASE task_25_04_2024;
+```
+
+#### Run backend (python > v3.10.0):
+
+1) In work directory
+
+```bash
+cd backend
+```
+
+2) Create virtual environment
+
+```bash
+virtualenv venv
+```
+
+3) Activate virtual environment
+
+```bash
+source venv/bin/activate
+```
+
+4) Install requirements
+
+```bash
+(venv) pip install -r requirements.txt
+```
+
+5) Run start project script
+
+```bash
+(venv) /bin/sh ./run-project.sh
+```
+
+#### Run tests:
+
+```bash
+(venv) /bin/sh ./run-tests.sh
+```
+
+#### Run frontend (node > v18.0):
+
+1) In work directory
+
+```bash
+cd frontend
+```
+
+2) Install requirements
+
+```bash
+npm install
+```
+
+3) Run vue application in dev mode
+
+```bash
+npm run dev
+```
